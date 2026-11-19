@@ -1,0 +1,264 @@
+{
+  "schema_version": "2.1",
+  "student": {
+    "crsid": null,
+    "team_id": null
+  },
+  "report_path": "report/report.pdf",
+  "q1": {
+    "a": {
+      "implementation_path": "src/strata/kernels.py"
+    },
+    "b": {
+      "test_paths": null,
+      "test_log_path": null,
+      "grm_max_abs_error": null,
+      "rsvd_principal_angles_deg": [
+        null,
+        null
+      ],
+      "scan_max_scaled_error": null
+    }
+  },
+  "q2": {
+    "a": {
+      "alpha": {
+        "value": null
+      },
+      "beta": {
+        "value": null
+      },
+      "gamma": {
+        "value": null
+      },
+      "delta": {
+        "value": null
+      },
+      "epsilon": {
+        "value": null
+      },
+      "zeta": {
+        "value": null
+      },
+      "eta": {
+        "value": null
+      },
+      "theta": {
+        "value": null
+      },
+      "kappa": {
+        "value": null
+      },
+      "mu": {
+        "value": null
+      },
+      "nu": {
+        "value": null
+      }
+    },
+    "b": {
+      "grm_n4096": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "grm_n8192": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "grm_n16384": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "eigh_pcs_n8192": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "rsvd_n8192": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B1": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B16": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B256": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B512": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B1024": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      },
+      "scan_B4096": {
+        "flops": null,
+        "traffic_bytes": null,
+        "intensity_flops_per_byte": null,
+        "roof_time_s": null,
+        "bound": null
+      }
+    },
+    "c": {
+      "grm": null,
+      "eigh_pcs": null,
+      "rsvd": null,
+      "scan": {
+        "B1": null,
+        "B16": null,
+        "B256": null,
+        "B512": null,
+        "B1024": null,
+        "B4096": null
+      }
+    },
+    "d": {
+      "B_star": null
+    },
+    "e": {
+      "n_max": null
+    }
+  },
+  "q3": {
+    "environment": {
+      "devices": null,
+      "jax_version": null
+    },
+    "a": {
+      "grm": {
+        "n4096": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null,
+          "argument_bytes": null,
+          "output_bytes": null,
+          "buffer_bytes_over_D": null
+        },
+        "n8192": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null,
+          "argument_bytes": null,
+          "output_bytes": null,
+          "buffer_bytes_over_D": null
+        },
+        "n16384": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null,
+          "argument_bytes": null,
+          "output_bytes": null,
+          "buffer_bytes_over_D": null
+        }
+      },
+      "fitted_exponent": null,
+      "host_time_s": null,
+      "speedup": null
+    },
+    "b": {
+      "eigh_pcs": {
+        "time_s": null,
+        "rate_flops_per_s": null,
+        "percent_peak": null,
+        "roof_time_over_time": null
+      },
+      "rsvd": {
+        "time_s": null,
+        "rate_flops_per_s": null,
+        "percent_peak": null,
+        "roof_time_over_time": null
+      },
+      "time_ratio": null,
+      "principal_angles_deg": [
+        null,
+        null
+      ]
+    },
+    "c": {
+      "scan": {
+        "B1": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        },
+        "B16": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        },
+        "B256": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        },
+        "B512": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        },
+        "B1024": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        },
+        "B4096": {
+          "time_s": null,
+          "rate_flops_per_s": null,
+          "percent_peak": null,
+          "roof_time_over_time": null
+        }
+      },
+      "first_compute_bound_B": null,
+      "plot_path": "figures/scan.pdf"
+    }
+  },
+  "q4": {
+    "a": {
+      "plot_path": "figures/roofline.pdf"
+    }
+  }
+}

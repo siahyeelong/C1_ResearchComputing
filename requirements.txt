@@ -1,0 +1,2 @@
+-r requirements-cpu.lock
+-r requirements-course.txt

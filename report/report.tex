@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\thesubsection}{\thesection(\alph{subsection})}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\title{C1 coursework: strata}
+\author{CRSid: replace this \qquad Team: replace this}
+\date{Michaelmas 2026}
+\begin{document}
+\maketitle
+
+% This template is optional. Replace its prompts with your answers.
+% Maximum 3000 words; section 4(b) has its own 150-word limit.
+% Use the brief for the complete requirements and formulas.
+% Keep this file at report/report.tex in your own private submission project.
+% Compile from the project root:
+% pdflatex -output-directory=report report/report.tex
+% Paths in \includegraphics are then relative to the project root.
+
+\section{Implementation of the formulas}
+\subsection{JAX functions}
+Identify the implementation file and briefly describe relevant choices.
+Submit the full code separately.
+
+\subsection{Tests against the reference}
+Summarise the three test results against their specified tolerances.
+Record the measured errors, angles and test-log path in the JSON.
+
+\section{Cost prediction}
+\subsection{Counting constants}
+Give one sentence explaining each count. Record all eleven values in the JSON.
+
+\subsection{Predictions at the measured sizes}
+Present the predictions in a table, using the JSON values. Label the units.
+
+\subsection{Scaling with the number of individuals}
+State the predicted exponents obtained using the supplied formula.
+
+\subsection{Batch size at the ridge point}
+State the predicted threshold.
+
+\subsection{Memory capacity}
+State the largest number of individuals under the specified capacity rule.
+
+\section{Measurements on the TPU}
+Record the device and software version. Use the brief's timing procedure.
+
+\subsection{Formation of the relationship matrix}
+Present the timings, fitted exponent and buffer sizes. Compare the fitted
+exponent with Question 2(c), and report the host-CPU time and speed-up.
+
+\subsection{Eigenvector calculations}
+Present the timings, their ratio and the principal angles for the specified
+two-column comparison.
+
+\subsection{Batched association scan}
+Include the plot of execution time against batch size, with a caption and
+labelled axes. Compare the first tested crossing with the predicted threshold.
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/scan.pdf}
+% \caption{Replace with a caption describing the plotted results.}
+% \end{figure}
+
+\section{Roofline analysis}
+\subsection{Measured rates on the roofline}
+Include the labelled roofline plot and a caption.
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/roofline.pdf}
+% \caption{Replace with a caption describing the plotted results.}
+% \end{figure}
+
+\subsection{Interpretation}
+In at most 150 words, explain which kernels approach the roofline and which
+fall below it. Relate the differences to their calculations and memory traffic.
+
+\end{document}

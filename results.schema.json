@@ -1,0 +1,1623 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/borisbolliet/strata-starter/main/results.schema.json",
+  "title": "C1 coursework 2026 results accompanying a report, version 2.1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "2.1"
+    },
+    "student": {
+      "type": "object",
+      "properties": {
+        "crsid": {
+          "type": "string",
+          "description": "Student's CRSid, without @cam.ac.uk.",
+          "x-answer": true,
+          "pattern": "^[a-z]{2,7}[0-9]{1,5}$"
+        },
+        "team_id": {
+          "type": "string",
+          "description": "Assigned team identifier.",
+          "x-answer": true,
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "crsid",
+        "team_id"
+      ],
+      "additionalProperties": false
+    },
+    "report_path": {
+      "type": "string",
+      "description": "Individual report in the student's own private project.",
+      "x-answer": true,
+      "minLength": 1,
+      "format": "relative-path",
+      "default": "report/report.pdf",
+      "x-extensions": [
+        ".pdf"
+      ],
+      "const": "report/report.pdf"
+    },
+    "q1": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "object",
+          "properties": {
+            "implementation_path": {
+              "type": "string",
+              "description": "JAX implementation file.",
+              "x-answer": true,
+              "minLength": 1,
+              "format": "relative-path",
+              "default": "src/strata/kernels.py",
+              "x-extensions": [
+                ".py"
+              ]
+            }
+          },
+          "required": [
+            "implementation_path"
+          ],
+          "additionalProperties": false
+        },
+        "b": {
+          "type": "object",
+          "properties": {
+            "test_paths": {
+              "type": "array",
+              "description": "Files containing the three kernel tests.",
+              "x-answer": true,
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "description": "Kernel test file.",
+                "x-answer": true,
+                "minLength": 1,
+                "format": "relative-path",
+                "x-extensions": [
+                  ".py"
+                ]
+              }
+            },
+            "test_log_path": {
+              "type": "string",
+              "description": "Saved output from running the tests.",
+              "x-answer": true,
+              "minLength": 1,
+              "format": "relative-path"
+            },
+            "grm_max_abs_error": {
+              "type": "number",
+              "description": "Maximum absolute error in G.",
+              "x-answer": true,
+              "minimum": 0
+            },
+            "rsvd_principal_angles_deg": {
+              "type": "array",
+              "description": "First two angles returned for the full n by k outputs.",
+              "x-answer": true,
+              "items": {
+                "type": "number",
+                "description": "Angle in degrees.",
+                "x-answer": true,
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "scan_max_scaled_error": {
+              "type": "number",
+              "description": "Maximum scan error divided by the stated tolerance.",
+              "x-answer": true,
+              "minimum": 0
+            }
+          },
+          "required": [
+            "test_paths",
+            "test_log_path",
+            "grm_max_abs_error",
+            "rsvd_principal_angles_deg",
+            "scan_max_scaled_error"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ],
+      "additionalProperties": false
+    },
+    "q2": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient alpha from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "beta": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient beta from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "gamma": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient gamma from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "delta": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient delta from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "epsilon": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient epsilon from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "zeta": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient zeta from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "eta": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient eta from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "theta": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient theta from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "kappa": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient kappa from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "mu": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient mu from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "nu": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "description": "Coefficient nu from the counting table.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon",
+            "zeta",
+            "eta",
+            "theta",
+            "kappa",
+            "mu",
+            "nu"
+          ],
+          "additionalProperties": false
+        },
+        "b": {
+          "type": "object",
+          "properties": {
+            "grm_n4096": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "grm_n8192": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "grm_n16384": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "eigh_pcs_n8192": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "rsvd_n8192": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B1": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B16": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B256": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B512": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B1024": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            },
+            "scan_B4096": {
+              "type": "object",
+              "properties": {
+                "flops": {
+                  "type": "number",
+                  "description": "F: counted floating-point operations.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "traffic_bytes": {
+                  "type": "number",
+                  "description": "D: estimated memory traffic, in bytes.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "intensity_flops_per_byte": {
+                  "type": "number",
+                  "description": "I = F / D, in FLOP per byte.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_s": {
+                  "type": "number",
+                  "description": "Predicted execution time, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "bound": {
+                  "type": "string",
+                  "description": "Classification from the roofline model.",
+                  "x-answer": true,
+                  "enum": [
+                    "memory",
+                    "compute"
+                  ]
+                }
+              },
+              "required": [
+                "flops",
+                "traffic_bytes",
+                "intensity_flops_per_byte",
+                "roof_time_s",
+                "bound"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "grm_n4096",
+            "grm_n8192",
+            "grm_n16384",
+            "eigh_pcs_n8192",
+            "rsvd_n8192",
+            "scan_B1",
+            "scan_B16",
+            "scan_B256",
+            "scan_B512",
+            "scan_B1024",
+            "scan_B4096"
+          ],
+          "additionalProperties": false
+        },
+        "c": {
+          "type": "object",
+          "properties": {
+            "grm": {
+              "type": "number",
+              "description": "Exponent calculated by doubling n, with other parameters fixed.",
+              "x-answer": true
+            },
+            "eigh_pcs": {
+              "type": "number",
+              "description": "Exponent calculated by doubling n, with other parameters fixed.",
+              "x-answer": true
+            },
+            "rsvd": {
+              "type": "number",
+              "description": "Exponent calculated by doubling n, with other parameters fixed.",
+              "x-answer": true
+            },
+            "scan": {
+              "type": "object",
+              "properties": {
+                "B1": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                },
+                "B16": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                },
+                "B256": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                },
+                "B512": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                },
+                "B1024": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                },
+                "B4096": {
+                  "type": "number",
+                  "description": "Exponent calculated by doubling n, with other parameters fixed.",
+                  "x-answer": true
+                }
+              },
+              "required": [
+                "B1",
+                "B16",
+                "B256",
+                "B512",
+                "B1024",
+                "B4096"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "grm",
+            "eigh_pcs",
+            "rsvd",
+            "scan"
+          ],
+          "additionalProperties": false
+        },
+        "d": {
+          "type": "object",
+          "properties": {
+            "B_star": {
+              "type": "number",
+              "description": "Predicted batch size at the ridge point; retain its fractional part.",
+              "x-answer": true,
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "B_star"
+          ],
+          "additionalProperties": false
+        },
+        "e": {
+          "type": "object",
+          "properties": {
+            "n_max": {
+              "type": "integer",
+              "description": "Largest n under the stated memory-capacity rule.",
+              "x-answer": true,
+              "minimum": 1
+            }
+          },
+          "required": [
+            "n_max"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "additionalProperties": false
+    },
+    "q3": {
+      "type": "object",
+      "properties": {
+        "environment": {
+          "type": "object",
+          "properties": {
+            "devices": {
+              "type": "array",
+              "description": "Strings describing the devices returned by jax.devices().",
+              "x-answer": true,
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "description": "Device description.",
+                "x-answer": true,
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "jax_version": {
+              "type": "string",
+              "description": "JAX version used for the TPU measurements.",
+              "x-answer": true,
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "devices",
+            "jax_version"
+          ],
+          "additionalProperties": false
+        },
+        "a": {
+          "type": "object",
+          "properties": {
+            "grm": {
+              "type": "object",
+              "properties": {
+                "n4096": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "argument_bytes": {
+                      "type": "integer",
+                      "description": "argument_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "output_bytes": {
+                      "type": "integer",
+                      "description": "output_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "buffer_bytes_over_D": {
+                      "type": "number",
+                      "description": "(argument_bytes + output_bytes) / D.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time",
+                    "argument_bytes",
+                    "output_bytes",
+                    "buffer_bytes_over_D"
+                  ],
+                  "additionalProperties": false
+                },
+                "n8192": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "argument_bytes": {
+                      "type": "integer",
+                      "description": "argument_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "output_bytes": {
+                      "type": "integer",
+                      "description": "output_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "buffer_bytes_over_D": {
+                      "type": "number",
+                      "description": "(argument_bytes + output_bytes) / D.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time",
+                    "argument_bytes",
+                    "output_bytes",
+                    "buffer_bytes_over_D"
+                  ],
+                  "additionalProperties": false
+                },
+                "n16384": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "argument_bytes": {
+                      "type": "integer",
+                      "description": "argument_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "output_bytes": {
+                      "type": "integer",
+                      "description": "output_size_in_bytes from memory_analysis().",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "buffer_bytes_over_D": {
+                      "type": "number",
+                      "description": "(argument_bytes + output_bytes) / D.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time",
+                    "argument_bytes",
+                    "output_bytes",
+                    "buffer_bytes_over_D"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "n4096",
+                "n8192",
+                "n16384"
+              ],
+              "additionalProperties": false
+            },
+            "fitted_exponent": {
+              "type": "number",
+              "description": "Slope from fitting log(t) against log(n).",
+              "x-answer": true
+            },
+            "host_time_s": {
+              "type": "number",
+              "description": "Host CPU execution time, in seconds.",
+              "x-answer": true,
+              "exclusiveMinimum": 0
+            },
+            "speedup": {
+              "type": "number",
+              "description": "Host CPU time divided by TPU grm time at n=16384.",
+              "x-answer": true,
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "grm",
+            "fitted_exponent",
+            "host_time_s",
+            "speedup"
+          ],
+          "additionalProperties": false
+        },
+        "b": {
+          "type": "object",
+          "properties": {
+            "eigh_pcs": {
+              "type": "object",
+              "properties": {
+                "time_s": {
+                  "type": "number",
+                  "description": "Execution time t from bench.timeit, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "rate_flops_per_s": {
+                  "type": "number",
+                  "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "percent_peak": {
+                  "type": "number",
+                  "description": "100 R / P_max, as a percentage, not a fraction.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_over_time": {
+                  "type": "number",
+                  "description": "t_roof / t, a dimensionless ratio.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "time_s",
+                "rate_flops_per_s",
+                "percent_peak",
+                "roof_time_over_time"
+              ],
+              "additionalProperties": false
+            },
+            "rsvd": {
+              "type": "object",
+              "properties": {
+                "time_s": {
+                  "type": "number",
+                  "description": "Execution time t from bench.timeit, in seconds.",
+                  "x-answer": true,
+                  "exclusiveMinimum": 0
+                },
+                "rate_flops_per_s": {
+                  "type": "number",
+                  "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "percent_peak": {
+                  "type": "number",
+                  "description": "100 R / P_max, as a percentage, not a fraction.",
+                  "x-answer": true,
+                  "minimum": 0
+                },
+                "roof_time_over_time": {
+                  "type": "number",
+                  "description": "t_roof / t, a dimensionless ratio.",
+                  "x-answer": true,
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "time_s",
+                "rate_flops_per_s",
+                "percent_peak",
+                "roof_time_over_time"
+              ],
+              "additionalProperties": false
+            },
+            "time_ratio": {
+              "type": "number",
+              "description": "eigh_pcs time divided by rsvd time.",
+              "x-answer": true,
+              "exclusiveMinimum": 0
+            },
+            "principal_angles_deg": {
+              "type": "array",
+              "description": "Angles comparing the leading TWO columns of each output.",
+              "x-answer": true,
+              "items": {
+                "type": "number",
+                "description": "Angle in degrees.",
+                "x-answer": true,
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "eigh_pcs",
+            "rsvd",
+            "time_ratio",
+            "principal_angles_deg"
+          ],
+          "additionalProperties": false
+        },
+        "c": {
+          "type": "object",
+          "properties": {
+            "scan": {
+              "type": "object",
+              "properties": {
+                "B1": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                },
+                "B16": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                },
+                "B256": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                },
+                "B512": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                },
+                "B1024": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                },
+                "B4096": {
+                  "type": "object",
+                  "properties": {
+                    "time_s": {
+                      "type": "number",
+                      "description": "Execution time t from bench.timeit, in seconds.",
+                      "x-answer": true,
+                      "exclusiveMinimum": 0
+                    },
+                    "rate_flops_per_s": {
+                      "type": "number",
+                      "description": "R = F / t, in FLOP/s, not TFLOP/s.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "percent_peak": {
+                      "type": "number",
+                      "description": "100 R / P_max, as a percentage, not a fraction.",
+                      "x-answer": true,
+                      "minimum": 0
+                    },
+                    "roof_time_over_time": {
+                      "type": "number",
+                      "description": "t_roof / t, a dimensionless ratio.",
+                      "x-answer": true,
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "time_s",
+                    "rate_flops_per_s",
+                    "percent_peak",
+                    "roof_time_over_time"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "B1",
+                "B16",
+                "B256",
+                "B512",
+                "B1024",
+                "B4096"
+              ],
+              "additionalProperties": false
+            },
+            "first_compute_bound_B": {
+              "type": "integer",
+              "description": "First TESTED B with I(B) > I*.",
+              "x-answer": true,
+              "enum": [
+                1,
+                16,
+                256,
+                512,
+                1024,
+                4096
+              ]
+            },
+            "plot_path": {
+              "type": "string",
+              "description": "Plot of execution time against B.",
+              "x-answer": true,
+              "minLength": 1,
+              "format": "relative-path",
+              "default": "figures/scan.pdf",
+              "x-extensions": [
+                ".pdf",
+                ".png"
+              ]
+            }
+          },
+          "required": [
+            "scan",
+            "first_compute_bound_B",
+            "plot_path"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "environment",
+        "a",
+        "b",
+        "c"
+      ],
+      "additionalProperties": false
+    },
+    "q4": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "object",
+          "properties": {
+            "plot_path": {
+              "type": "string",
+              "description": "Labelled roofline plot.",
+              "x-answer": true,
+              "minLength": 1,
+              "format": "relative-path",
+              "default": "figures/roofline.pdf",
+              "x-extensions": [
+                ".pdf",
+                ".png"
+              ]
+            }
+          },
+          "required": [
+            "plot_path"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "a"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "student",
+    "report_path",
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+  ],
+  "additionalProperties": false
+}

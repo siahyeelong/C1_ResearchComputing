@@ -1,0 +1,10 @@
+image: python:3.12-slim
+
+stages:
+  - check
+
+check_submission:
+  stage: check
+  script:
+    - python -m pip install -r requirements-submission.txt
+    - python check_submission.py
